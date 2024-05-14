@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CodigoClase19"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="600" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" >
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Nombres" />
+                <TextBox x:Name="txtNombres" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Precio" />
+                <TextBox x:Name="txtApellidos" Margin="0,10,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                <Label Content="Descripción" />
+                <TextBox x:Name="txtDireccion" />
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+      Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnListar" Content="Listar" Style="{StaticResource styleButtonGreen}"/>
+            <Button x:Name="btnAgregar" Content="Agregar" Style="{StaticResource styleButtonBlue}"/>
+            <Button x:Name="btnModificar" Content="Modificar" Style="{StaticResource styleButtonBlue}"/>
+            <Button x:Name="btnEliminar" Content="Eliminar" Style="{StaticResource styleButtonBlue}"/>
+        </StackPanel>
+        <DataGrid x:Name="dgDemo" Grid.Row="2"></DataGrid>
     </Grid>
 </Window>
