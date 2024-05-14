@@ -1,11 +1,11 @@
-﻿<Window x:Class="CodigoClase19.Window1"
+﻿<Window x:Class="CodigoClase19.ViewPersonCustom"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CodigoClase19"
         mc:Ignorable="d"
-        Title="Window1" Height="600" Width="800">
+        Title="ViewPersonCustom" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"></RowDefinition>
@@ -19,23 +19,35 @@
                 <TextBox x:Name="txtNombres" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <Label Content="Precio" />
+                <Label Content="Apellidos" />
                 <TextBox x:Name="txtApellidos" Margin="0,10,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
-                <Label Content="Descripción" />
+                <Label Content="Dirección" />
                 <TextBox x:Name="txtDireccion" />
             </StackPanel>
 
         </StackPanel>
 
         <StackPanel Grid.Row="1"
-      Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="btnListar" Content="Listar" Style="{StaticResource styleButtonGreen}"/>
-            <Button x:Name="btnAgregar" Content="Agregar" Style="{StaticResource styleButtonBlue}"/>
+          Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnListar" Content="Listar" Style="{StaticResource styleButtonGreen}"
+       Click="btnListar_Click" />
+            <Button x:Name="btnAgregar" Content="Agregar" Style="{StaticResource styleButtonBlue}" 
+       Click="btnAgregar_Click"/>
             <Button x:Name="btnModificar" Content="Modificar" Style="{StaticResource styleButtonBlue}"/>
             <Button x:Name="btnEliminar" Content="Eliminar" Style="{StaticResource styleButtonBlue}"/>
         </StackPanel>
-        <DataGrid x:Name="dgDemo" Grid.Row="2"></DataGrid>
+        <DataGrid x:Name="dgDemo" Grid.Row="2"  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Order" Binding="{Binding Orden}" Width="100"/>
+                <DataGridTextColumn Header="Codigo" Binding="{Binding Id}" Width="100"/>
+                <DataGridTextColumn Header="Apellidos" Binding="{Binding Apellidos}" Width="100"/>
+                <DataGridTextColumn Header="Nombres" Binding="{Binding Nombres}" Width="100"/>
+                <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="100"/>
+                <DataGridCheckBoxColumn Header="Seleccionar" Binding="{Binding Activo}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+       
     </Grid>
 </Window>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="CodigoClase19.ViewPersonListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodigoClase19"
+        mc:Ignorable="d"
+        Title="ViewPersonListView" Height="450" Width="800">
+    <StackPanel>
+        <Button x:Name="btnListar" Content="Listar" Style="{StaticResource styleButtonGreen}"
+        Click="btnListar_Click" />
+        
+        
+        <ListView Name="lvPersona" Margin="10">
+            <ListView.Resources>
+                <DataTemplate x:Key="ProductTemplate">
+                
+                    <StackPanel Orientation="Horizontal">
+                        <Image  Stretch="Uniform" Width="50"
+    Source="https://img.freepik.com/vector-gratis/grupo-personas-sonrientes-felices-mirando-vista-superior-ilustracion-vector-plano-fondo-blanco_1284-78599.jpg"></Image>
+                        <TextBlock Text="{Binding Nombres}" VerticalAlignment="Center" Width="100" Margin="5" />
+                        <TextBox Text="{Binding Apellidos}" VerticalAlignment="Center"
+                                 MaxLength="5"
+                                 Width="100" Margin="5" />
+                        <TextBlock Text="{Binding Edad}" Foreground="red"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center" Width="100" Margin="5" />
+                        <Button Content="Agregar" Style="{StaticResource styleButtonBlue}" />
+                    </StackPanel>
+                    
+                    
+                    
+                </DataTemplate>
+            </ListView.Resources>
+            <ListView.ItemTemplate>
+                <StaticResource ResourceKey="ProductTemplate" />
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackPanel>
+</Window>
