@@ -6,20 +6,53 @@
         xmlns:local="clr-namespace:CodigoClase19"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
+    <Window.Resources>
+        <Style TargetType="DataGrid">
+            <!--<Setter Property="Margin" Value="20,20,20,20"/>-->
+            <Setter Property="RowBackground" Value="#f6f6f6"/>
+            <Setter Property="AlternatingRowBackground" Value="#a5aceb"/>
+            <Setter Property="HorizontalGridLinesBrush" Value="Gray"/>
+            <Setter Property="VerticalGridLinesBrush" Value="Gray"/>
+            <Setter Property="ColumnHeaderHeight" Value="35"/>
+            <Setter Property="RowHeight" Value="30"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+        </Style>
+
+        <!-- Estilo para los encabezados de columna del DataGrid -->
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#5564eb"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Verdana"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" 
-                    HorizontalAlignment="Center"
-                    >
-         <Label Content="Ingrese los nombres" />
-         <TextBox x:Name="txtNombres" />
-         <Label Content="Ingrese los apellidos" />
-         <TextBox x:Name="txtApellidos" />
+
+        <StackPanel Grid.Row="0" >
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+            <Label Content="Nombres" />
+            <TextBox x:Name="txtNombres" />
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Apellidos" />
+                <TextBox x:Name="txtApellidos" Margin="0,10,0,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                <Label Content="Dirección" />
+                <TextBox x:Name="txtDireccion" />
+        </StackPanel>
+
+        </StackPanel>
+        
+        
         <StackPanel Grid.Row="1"
             Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="btnListar" Content="Listar" Style="{StaticResource styleButtonGreen}"

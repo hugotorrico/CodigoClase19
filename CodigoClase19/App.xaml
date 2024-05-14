@@ -7,13 +7,15 @@
         <ResourceDictionary>
             <Style TargetType="Label">
                 <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Margin" Value="40,0,0,0"/>
             </Style>
             <Style TargetType="TextBox">
                 <Setter Property="Width" Value="200"></Setter>
                 <Setter Property="Height" Value="30"></Setter>
             </Style>
             <Style TargetType="Button" x:Key="styleButtonBlue">
-                <Setter Property="Background" Value="#5564eb"></Setter>
+                <Setter Property="Background" Value="#5564eb"/>
+                <Setter Property="Foreground" Value="White"/>
                 <Setter Property="Margin"  Value="20"></Setter>
                 <Setter Property="Width" Value="100"></Setter>
                 <Setter Property="Height" Value="30"></Setter>

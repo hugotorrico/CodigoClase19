@@ -10,5 +10,13 @@
         <Button x:Name="btnListar" Content="Listar" 
                 Style="{StaticResource styleButtonGreen}" 
                 />
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Edad" Binding="{Binding Edad}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </StackPanel>
 </Window>
